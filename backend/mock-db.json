@@ -1,0 +1,172 @@
+{
+  "products": [
+    {
+      "id": 1,
+      "name": "Product001",
+      "cost": 10,
+      "quantity": 1000,
+      "locationId": 1,
+      "familyId": 1
+    },
+    {
+      "id": 2,
+      "name": "Product002",
+      "cost": 20,
+      "quantity": 2000,
+      "locationId": 1,
+      "familyId": 2
+    },
+    {
+      "id": 3,
+      "name": "Product003",
+      "cost": 30,
+      "quantity": 3000,
+      "locationId": 3,
+      "familyId": 2
+    },
+    {
+      "id": 4,
+      "name": "Product004",
+      "cost": 40,
+      "quantity": 4000,
+      "locationId": 2,
+      "familyId": 3
+    },
+    {
+      "name": "Product005",
+      "cost": 50,
+      "quantity": 5000,
+      "locationId": 1,
+      "familyId": 3,
+      "id": 5
+    },
+    {
+      "name": "bvolf",
+      "cost": 34,
+      "quantity": 4,
+      "locationId": 1,
+      "familyId": 1,
+      "id": 6
+    },
+    {
+      "name": "2omys",
+      "cost": 8,
+      "quantity": 1,
+      "locationId": 1,
+      "familyId": 1,
+      "id": 7
+    },
+    {
+      "name": "jvhp7",
+      "cost": 56,
+      "quantity": 6,
+      "locationId": 2,
+      "familyId": 2,
+      "id": 8
+    },
+    {
+      "name": "baecs",
+      "cost": 32,
+      "quantity": 4,
+      "locationId": 1,
+      "familyId": 1,
+      "id": 9
+    },
+    {
+      "name": "1tljt",
+      "cost": 6,
+      "quantity": 1,
+      "locationId": 1,
+      "familyId": 1,
+      "id": 10
+    },
+    {
+      "name": "ea5b2",
+      "cost": 40,
+      "quantity": 4,
+      "locationId": 2,
+      "familyId": 2,
+      "id": 11
+    },
+    {
+      "name": "7biuv",
+      "cost": 21,
+      "quantity": 3,
+      "locationId": 1,
+      "familyId": 1,
+      "id": 12
+    },
+    {
+      "name": "kjpxm",
+      "cost": 58,
+      "quantity": 6,
+      "locationId": 2,
+      "familyId": 2,
+      "id": 13
+    },
+    {
+      "name": "avdk1",
+      "cost": 31,
+      "quantity": 4,
+      "locationId": 1,
+      "familyId": 1,
+      "id": 14
+    },
+    {
+      "name": "2d2ah",
+      "cost": 7,
+      "quantity": 1,
+      "locationId": 1,
+      "familyId": 1,
+      "id": 15
+    }
+  ],
+  "locations": [
+    {
+      "id": 1,
+      "name": "Location001"
+    },
+    {
+      "id": 2,
+      "name": "Location002"
+    },
+    {
+      "id": 3,
+      "name": "Location003"
+    }
+  ],
+  "families": [
+    {
+      "id": 1,
+      "name": "FM001"
+    },
+    {
+      "id": 2,
+      "name": "FM002"
+    },
+    {
+      "id": 3,
+      "name": "FM003"
+    }
+  ],
+  "transactions": [
+    {
+      "id": 1,
+      "cost": 11,
+      "quantity": 10,
+      "productId": 1
+    },
+    {
+      "id": 2,
+      "cost": 12,
+      "quantity": 100,
+      "productId": 2
+    },
+    {
+      "id": 3,
+      "cost": 15,
+      "quantity": 101,
+      "productId": 3
+    }
+  ]
+}

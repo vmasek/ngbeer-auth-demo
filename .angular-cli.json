@@ -19,7 +19,8 @@
       "testTsconfig": "tsconfig.spec.json",
       "prefix": "br-auth",
       "styles": [
-        "styles.scss"
+        "styles.scss",
+        "buttons.scss"
       ],
       "scripts": [],
       "environmentSource": "environments/environment.ts",

@@ -1,1 +1,35 @@
-/* You can add global styles to this file, and also import other style files */
+/**
+ You can add global styles to this file, and also import other style files
+ WARNING: Do NOT import this file in any component style
+*/
+
+@import 'variables';
+
+html, body {
+  height: 100%;
+}
+
+body {
+  line-height: 1;
+  background: $background-color;
+  font-size: 12px;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  outline: none;
+  box-sizing: border-box;
+}
+
+input {  /* stylelint-disable-line selector-no-type */
+  border: none;
+  background: none;
+}
+
+.error {
+  background-color: red;
+  color: white;
+  padding: 32px;
+  text-align: center;
+}
