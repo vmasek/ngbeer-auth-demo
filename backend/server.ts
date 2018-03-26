@@ -4,12 +4,12 @@ import { readFile } from 'fs';
 import { OK, UNAUTHORIZED } from 'http-status-codes';
 import * as bodyParser from 'body-parser';
 import * as jsonServer from 'json-server';
-import { verify, sign, JsonWebTokenError, TokenExpiredError, NotBeforeError } from 'jsonwebtoken';
+import { verify, sign, JsonWebTokenError, TokenExpiredError, NotBeforeError, decode } from 'jsonwebtoken';
 import { promisify } from 'util';
 
 const SERVER_PORT = 3000;
-const SECRET_KEY = '123456789';
-const TOKEN_TTL = '1m';
+const SECRET_KEY = 'verysecretkeypleasedonotreadthisityoudonothavetoknoweverything';
+const TOKEN_TTL = '4m';
 
 interface User {
   email: string;
@@ -21,7 +21,7 @@ async function readUsers(): Promise<User[]> {
 }
 
 // Create a token from a payload
-function createToken(payload: string | Buffer | object): string {
+function createToken(payload: {email: string, password: string}): string {
   return sign(payload, SECRET_KEY, {expiresIn: TOKEN_TTL});
 }
 
@@ -58,6 +58,30 @@ async function startServer(): Promise<void> {
     res.status(OK).json({accessToken});
   });
 
+  server.get('/auth/refresh', async (req: any, res: any) => {
+    if (!req.headers.authorization || req.headers.authorization.split(' ')[0] !== 'Bearer') {
+      const status = UNAUTHORIZED;
+      const message = 'Error in authorization format';
+      res.status(status).json({status, message});
+      return;
+    }
+
+    const token = req.headers.authorization.split(' ')[1];
+
+    await verifyToken(token)
+      .then(() => {
+        const {email, password} = decode(token) as {email: string, password: string};
+        const accessToken = createToken({email, password});
+        res.status(OK).json({accessToken});
+      })
+      .catch(() => {
+        const status = UNAUTHORIZED;
+        const message = 'Error access token is revoked';
+        res.status(status).json({status, message});
+        return;
+      });
+  });
+
   server.use(/^(?!\/auth).*$/, async (req: any, res: any, next: any) => {
     if (!req.headers.authorization || req.headers.authorization.split(' ')[0] !== 'Bearer') {
       const status = UNAUTHORIZED;
@@ -66,9 +90,8 @@ async function startServer(): Promise<void> {
       return;
     }
 
-
-    verifyToken(req.headers.authorization.split(' ')[1])
-      .then((oke) => next())
+    await verifyToken(req.headers.authorization.split(' ')[1])
+      .then(() => next())
       .catch(() => {
         const status = UNAUTHORIZED;
         const message = 'Error access token is revoked';

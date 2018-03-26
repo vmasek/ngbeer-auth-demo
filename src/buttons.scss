@@ -44,7 +44,9 @@
   margin: .5em;
   font-size: 2em;
   font-weight: bold;
-  transition: all .5s;
+  transition: all .25s;
+  cursor: pointer;
+  user-select: none;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
@@ -70,7 +72,7 @@
   right: 0;
   z-index: -1;
   border-radius: 5px;
-  transition: all .5s;
+  transition: all .25s;
 }
 
 .button:after {
@@ -83,7 +85,7 @@
   right: 2px;
   z-index: -1;
   border-radius: 5px;
-  transition: all .5s;
+  transition: all .25s;
 }
 
 .button2 {
@@ -92,7 +94,7 @@
   margin: .5em;
   padding: .5em;
   border-radius: 5px;
-  transition: all .5s;
+  transition: all .25s;
   color: #ffffff;
   text-decoration: none;
 }

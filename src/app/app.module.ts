@@ -5,17 +5,20 @@ import { NgModule } from '@angular/core';
 import { AppRoutingModule } from './app-routing.module';
 
 import { AppComponent } from './app.component';
+import { AuthGuard } from './auth/auth.guard';
 import { AuthService } from './auth/auth.service';
 import { JwtInterceptor } from './auth/jwt.interceptor';
 import { TokenInterceptor } from './auth/token.interceptor';
 import { UnauthorizedComponent } from './unauthorized/unauthorized.component';
 import { NotFoundComponent } from './not-found/not-found.component';
+import { ProductsComponent } from './products/products.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     UnauthorizedComponent,
-    NotFoundComponent
+    NotFoundComponent,
+    ProductsComponent
   ],
   imports: [
     BrowserModule,
@@ -34,6 +37,7 @@ import { NotFoundComponent } from './not-found/not-found.component';
       useClass: JwtInterceptor,
       multi: true
     },
+    AuthGuard,
   ],
   bootstrap: [AppComponent]
 })

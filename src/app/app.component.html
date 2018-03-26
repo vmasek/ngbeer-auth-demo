@@ -12,7 +12,7 @@
        type="button"
        (click)="login()"
     >
-      login as Bruno
+      login as Yolan
     </a>
   </ng-template>
 
@@ -25,9 +25,23 @@
 
   <a class="button b-green"
      type="button"
+     routerLink="/products"
+  >
+    show all products
+  </a>
+
+  <a class="button b-green"
+     type="button"
      (click)="postProduct()"
   >
     post product
+  </a>
+
+  <a class="button b-pink"
+     type="button"
+     (click)="auth.refreshToken()"
+  >
+    refresh Token
   </a>
 </div>
 

@@ -15,15 +15,17 @@ function randomString(seed?: number): string {
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  constructor(public http: HttpClient, public auth: AuthService) {
+  constructor(public http: HttpClient,
+              public auth: AuthService) {
   }
 
   login(): void {
-    this.http.post('http://localhost:3000/auth/login', {email: 'bruno@email.com', password: 'bruno'})
+    this.http.post('http://localhost:3000/auth/login', {email: 'yolan@email.com', password: 'yolan'})
       .subscribe(
         ({accessToken}: { accessToken: string }) => {
-          console.info('Welcome back Bruno', accessToken);
+          console.info('Welcome back Yolan', accessToken);
           AuthService.token = accessToken;
+          this.auth.refreshTokenWithTimeout();
         }
       );
   }

@@ -1,0 +1,12 @@
+<table style="width:100%" align="center">
+  <tr>
+    <th>Name</th>
+    <th>Quantity</th>
+    <th>Cost</th>
+  </tr>
+  <tr *ngFor="let product of products$ | async">
+    <td>{{product.name}}</td>
+    <td>{{product.quantity}}</td>
+    <td>{{product.cost}}</td>
+  </tr>
+</table>

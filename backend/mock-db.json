@@ -119,6 +119,54 @@
       "locationId": 1,
       "familyId": 1,
       "id": 15
+    },
+    {
+      "name": "mtamd",
+      "cost": 64,
+      "quantity": 7,
+      "locationId": 2,
+      "familyId": 2,
+      "id": 16
+    },
+    {
+      "name": "rf6ey",
+      "cost": 77,
+      "quantity": 8,
+      "locationId": 3,
+      "familyId": 3,
+      "id": 17
+    },
+    {
+      "name": "yn08l",
+      "cost": 97,
+      "quantity": 10,
+      "locationId": 3,
+      "familyId": 3,
+      "id": 18
+    },
+    {
+      "name": "mp4kg",
+      "cost": 64,
+      "quantity": 7,
+      "locationId": 2,
+      "familyId": 2,
+      "id": 19
+    },
+    {
+      "name": "1j6eb",
+      "cost": 5,
+      "quantity": 1,
+      "locationId": 1,
+      "familyId": 1,
+      "id": 20
+    },
+    {
+      "name": "38jp7",
+      "cost": 9,
+      "quantity": 1,
+      "locationId": 1,
+      "familyId": 1,
+      "id": 21
     }
   ],
   "locations": [
