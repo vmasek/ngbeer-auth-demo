@@ -15,23 +15,16 @@ function randomString(seed?: number): string {
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  constructor(public http: HttpClient,
-              public auth: AuthService) {
+  constructor(private readonly http: HttpClient,
+              private readonly auth: AuthService) {
   }
 
   login(): void {
-    this.http.post('http://localhost:3000/auth/login', {email: 'yolan@email.com', password: 'yolan'})
-      .subscribe(
-        ({accessToken}: { accessToken: string }) => {
-          console.info('Welcome back Yolan', accessToken);
-          AuthService.token = accessToken;
-          this.auth.refreshTokenWithTimeout();
-        }
-      );
+    this.auth.login('yolan@email.com', 'yolan');
   }
 
   logout(): void {
-    AuthService.token = null;
+    this.auth.logout();
   }
 
   getProducts(): void {

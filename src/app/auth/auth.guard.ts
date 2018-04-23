@@ -16,6 +16,6 @@ export class AuthGuard implements CanActivate {
     this.router.navigate([UNAUTHORIZED.toString()], {
       queryParams: {guardIsYelling: 'you-shell-not-pass'}
     });
-    return true;
+    return false;
   }
 }
